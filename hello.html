@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Hello</title>
+</head>
+<body>
+        <h1>Hello this is first HTML file as response!!!</h1>
+        <h2>value is:</h2>{{data}}
+    {% comment %}
+        {% if x > y %}
+           <p>In if block</p>
+           <h4>{{x}} is greater</h4>
+        {% else %}
+           <p>In else block</p>
+           <h4>{{y}} is greater</h4>
+        {% endif %}
+
+        <h4>Loops:</h4>
+        {% for x in l %}
+            <p>Value is:{{x}}</p>
+        {% endfor %}
+
+        {% for x in l %}
+           {{forloop.counter}}
+        {% endfor %}
+    
+    {% endcomment %}
+
+   <img src="{% static 'images/mvt.png' %}" alt="">
+   <button onclick="greet()">Click Me</button>
+
+    <h3>Product Page</h3>
+
+    {% for x in products %}
+       <div>
+        <h3>Product{{x.id}}</h3>
+        <b>Image:</b>{{x.image}} <br>
+        <b>Name:</b>{{x.name}} <br>
+        <b>Category:</b>{{x.cat}} <br>
+        <b>Price:</b>{{x.price}} <br>
+        <hr>
+       </div>
+    {% endfor %}
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
